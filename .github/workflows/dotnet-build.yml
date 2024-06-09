@@ -22,11 +22,11 @@ jobs:
       with:
         dotnet-version: 8.0.x
     - name: Restore dependencies
-      run: dotnet restore
+      run: dotnet restore ./github-actions-dotnet-webapp/github4women/github4women.csproj
     - name: Build
-      run: dotnet build --no-restore
+      run: dotnet build --no-restore ./github-actions-dotnet-webapp/github4women/github4women.csproj
     - name: Test
-      run: dotnet test --no-build --verbosity normal
+      run: dotnet test --no-build --verbosity normal ./github-actions-dotnet-webapp/github4women/github4women.csproj
     - name: Run custom script
       run: |
         chmod +x ./scripts/custom_script.sh
